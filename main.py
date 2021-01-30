@@ -3,8 +3,14 @@ A game application that compares two social media following. The user has to gue
 """
 
 # Imports
+import os
 from data import data
 import random
+
+
+def clear():
+    """This function clears the console"""
+    os.system('clear')
 
 
 def game():
@@ -41,6 +47,7 @@ def game():
 
         # User guess
         guess = input('Who has more followers? "A" or "B"\n').upper()
+        clear()
 
         # Compare followers
         if guess == 'A' and A > B:
