@@ -8,15 +8,21 @@ import random
 
 
 def game():
+    # Initial game score
+    score = 0
 
     game_over = False
     while not game_over:
+
+        # Display number of correct guess
+        print(f'\nCurrent score: {score}\n')
+
         # selecting the accounts
         compare = random.choice(data)
         name = compare['name']
         desc = compare['description']
         country = compare['country']
-        print(f"\nA: {name}, a {desc}, from {country}")
+        print(f"A: {name}, a {desc}, from {country}")
 
         against = random.choice(data)
         if against == compare:
@@ -39,16 +45,21 @@ def game():
         # Compare followers
         if guess == 'A' and A > B:
             print('Correct, A is the answer.')
+            score += 1
         elif guess == 'A' and B > A:
             print('Wrong, B is the answer.')
+            print(f'\nFinal score: {score}\n')
             game_over = True
         elif guess == 'B' and A < B:
             print('Correct, B is the answer.')
+            score += 1
         elif guess == 'B' and A > B:
             print('Wrong, A is the answer.')
+            print(f'\nFinal score: {score}\n')
             game_over = True
         else:
             print('Invalid guess.')
+            print(f'\nFinal score: {score}\n')
             game_over = True
 
 
