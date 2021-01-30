@@ -24,5 +24,27 @@ def game():
     country = against['country']
     print(f"B: {name}, a {desc}, from {country}")
 
+    A = compare["follower_count"]
+    B = against["follower_count"]
+
+    # Testing, will be removed
+    print(A)
+    print(B)
+
+    # User guess
+    guess = input('Who has more followers? "A" or "B"\n').upper()
+
+    # Compare followers
+    if guess == 'A' and A > B:
+        print('Correct, A is the answer.')
+    elif guess == 'A' and B > A:
+        print('Wrong, B is the answer.')
+    elif guess == 'B' and A < B:
+        print('Correct, B is the answer.')
+    elif guess == 'B' and A > B:
+        print('Wrong, A is the answer.')
+    else:
+        print('Invalid guess.')
+
 
 game()
